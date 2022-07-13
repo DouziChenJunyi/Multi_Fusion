@@ -1,0 +1,72 @@
+{
+    "boxes": [
+        {
+            "classes": "tank",
+            "confidence": 1.0,
+            "coordinates": [
+                155,
+                271,
+                299,
+                462
+            ]
+        },
+        {
+            "classes": "tank",
+            "confidence": 0.8,
+            "coordinates": [
+                139,
+                250,
+                162,
+                277
+            ]
+        },
+        {
+            "classes": "tank",
+            "confidence": 0.9,
+            "coordinates": [
+                185,
+                89,
+                249,
+                157
+            ]
+        },
+        {
+            "classes": "tank",
+            "confidence": 0.9,
+            "coordinates": [
+                154,
+                166,
+                184,
+                200
+            ]
+        }
+    ],
+    "infos": [
+        {
+            "classes": "tank",
+            "confidence": "0.95",
+            "lat": 163.713023,
+            "long": 339.679658
+        },
+        {
+            "classes": "tank",
+            "confidence": "0.95",
+            "lat": 152.798821,
+            "long": 258.15654
+        },
+        {
+            "classes": "tank",
+            "confidence": "0.9",
+            "lat": 163.713023,
+            "long": 190.220609
+        },
+        {
+            "classes": "tank",
+            "confidence": "0.9",
+            "lat": 218.28403,
+            "long": 135.871863
+        }
+    ],
+    "image_url": "/home/ming/Desktop/28/Final28May24/src/img/h1_HujunDetection.jpg",
+    "Total_time": 1.4379100799560547
+}

@@ -1,0 +1,22 @@
+/* 全局样式表 */
+html {
+	background-color: #030c60;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #030c60;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+#app {
+	background-color: #030c60;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
