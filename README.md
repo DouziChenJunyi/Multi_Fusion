@@ -363,5 +363,8 @@ def upload_image():
       load_f.close()
 ```
 
+### 5 多源体征数据融合的模块
+由于该模块涉及本人毕业论文问题，暂不公开。
+
 前端主页如下：
 ![image](https://github.com/DouziChenJunyi/Multi_Fusion/blob/main/screenshot/mainPage.jpeg)
