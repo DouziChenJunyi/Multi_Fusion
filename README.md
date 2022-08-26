@@ -2,10 +2,10 @@
 个人职责：算法/后端开发/前端
 工作内容：【后端】使用 Python+Flask 框架，实现后台搭建与整个项目的模块整合。基于线程池将识别请求发送至远程 GPU 节点；利用 Redis 缓存数据库，基于图像 md5 技术，实现重复图像运行结果的快速返回；利用令牌桶算法，对网路请求数据进行限流。【算法】负责多源图像融合及多源体征数据融合的模块。前者基于像素级别的 IOU 融合策略；后者基于特征重要性分析技术，依赖多尺度时间门控扩散卷积及 Transformer 机制。【前端】使用Vue Element+Node.js实现整个项目。
 
-
 **备注：** 本博文梳理总结多源数据融合项目中用到的技术点，由于保密要求，只展示技术点的 demo 代码，不会涉及原项目代码。
 ### 1 项目框架
-![](https://img2022.cnblogs.com/blog/1466728/202207/1466728-20220726105704679-1514618209.png)
+![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220826205918042-1187164167.png)
+
 本项目背景要求，GPU 节点无法连接外网，客户端通过外网 IP 访问服务器，服务器通过内网 IP 与 GPU 节点进行通信。
 GPU 节点 与 服务器运行的都是 Flask Web。
 > 关于 Flask 的文档：https://flask.palletsprojects.com/en/2.1.x/
@@ -115,6 +115,48 @@ json = {
 # 发送post请求
 response = requests.post(url=register_url, json=json, headers=header)
 print(response.json())
+```
+
+#### 技术点 4 获取子线程的返回值
+```python
+from threading import Thread
+# _sum = 0
+
+def cal_sum(begin, end):
+    # global _sum
+    _sum = 0
+    for i in range(begin, end + 1):
+        _sum += i
+    return  _sum
+
+"""重新定义带返回值的线程类"""
+class MyThread(Thread):
+    def __init__(self, func, args):
+        super(MyThread, self).__init__()
+        self.func = func
+        self.args = args
+
+    def run(self):
+        self.result = self.func(*self.args)
+
+    def get_result(self):
+        try:
+            return self.result
+        except Exception:
+            return None
+
+
+if __name__ == '__main__':
+    t1 = MyThread(cal_sum, args=(1, 5))
+    t2 = MyThread(cal_sum, args=(6, 10))
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+    res1 = t1.get_result()
+    res2 = t2.get_result()
+
+    print(res1 + res2)
 ```
 
 ### 2 基于图片 md5 的 Redis 缓存优化
@@ -441,7 +483,3 @@ print(time.strftime('%X'), "end")
 如果 redis 整个缓存级别都不可用，又要保证提供服务，不能进行服务降级，一个很好的解决办法就是使用令牌桶进行限流。
 备注：redis 的主要功能做备用方案，不可用的时候切备用方案。未实现的功能直接降级或限流走服务器（数据库），部分缓存功能可以利用本地缓存牺牲部分一致性来满足可用性。
  
-
-
-前端主页如下：
-![image](https://github.com/DouziChenJunyi/Multi_Fusion/blob/main/screenshot/mainPage.jpeg)
