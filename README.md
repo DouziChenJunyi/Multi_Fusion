@@ -4,7 +4,7 @@
 
 **备注：** 本博文梳理总结多源数据融合项目中用到的技术点，由于保密要求，只展示技术点的 demo 代码，不会涉及原项目代码。
 ### 1 项目框架
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220826205918042-1187164167.png)
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/34237564/187341770-55c6366a-20fc-46b2-949c-cc3a3f6a57ff.png">
 
 本项目背景要求，GPU 节点无法连接外网，客户端通过外网 IP 访问服务器，服务器通过内网 IP 与 GPU 节点进行通信。
 GPU 节点 与 服务器运行的都是 Flask Web。
@@ -484,15 +484,18 @@ print(time.strftime('%X'), "end")
 备注：redis 的主要功能做备用方案，不可用的时候切备用方案。未实现的功能直接降级或限流走服务器（数据库），部分缓存功能可以利用本地缓存牺牲部分一致性来满足可用性。
  
 ### 本项目的 PPT 介绍
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111856846-1036942903.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111904594-1499309847.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111912324-117514131.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111933775-772706171.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111941813-1164130886.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111947830-2074189400.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111953603-2082702692.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830111959017-47672878.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830112005154-1316939089.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830112018901-369391444.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830112025704-1232702791.png)
-![](https://img2022.cnblogs.com/blog/1466728/202208/1466728-20220830112037801-625679100.png)
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187341939-99e2333a-73b9-4798-a6ab-01cd61d88cab.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187341962-866ac922-280c-42fe-a7b1-250dc52f9c5a.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187341977-78a7301c-7a9d-4542-a06d-346ea541014f.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187341995-3bcd7f6f-00b7-4215-921e-38f70b50589d.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342025-b960ad74-32b7-4b28-a00d-1dcb2c9997c7.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342053-247ea33e-616f-4b13-8ba8-e6a2beeac9b8.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342068-2dd12238-63c3-44db-bc3b-6253701a371b.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342011-eddb7759-3f13-4dd0-a3f4-b90508cfcc14.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342079-be37e7a1-1ad2-4b23-adef-93ee63ae38b9.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342095-49f5b238-57ef-4fca-86e8-a012b67730a0.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342131-7b923cc8-992e-47d9-baca-a2ead47bdb9a.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342115-2e093894-8c5e-4907-973a-f6627c194b99.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342145-876a84d8-b65b-4536-85ac-33ece2fa0689.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342160-84d10ed7-5054-4b09-807a-f62defe52c8b.png"> 
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187342131-7b923cc8-992e-47d9-baca-a2ead47bdb9a.png">
