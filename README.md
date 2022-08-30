@@ -6,7 +6,7 @@
 ### 1 项目框架
 <img width="415" alt="image" src="https://user-images.githubusercontent.com/34237564/187341770-55c6366a-20fc-46b2-949c-cc3a3f6a57ff.png">
 
-本项目背景要求，GPU 节点无法连接外网，客户端通过外网 IP 访问服务器，服务器通过内网 IP 与 GPU 节点进行通信。
+技术背景：在某种特定复杂环境下，为了安全性，所有客户端无法直接与外网通信。服务端只能选用小算力的Navidia Jetson
 GPU 节点 与 服务器运行的都是 Flask Web。
 > 关于 Flask 的文档：https://flask.palletsprojects.com/en/2.1.x/
 
@@ -436,7 +436,7 @@ this.result_tableData[1]['result_num'] = view1_res_num
 class http.server.ThreadingHTTPServer(server_address, RequestHandlerClass)
 ```
 2）flask 用一个包含嵌套字典的栈对不同的线程的环境变量（主要是请求头和 app 相关的内容）进行隔离。
-![](https://img2022.cnblogs.com/blog/1466728/202207/1466728-20220728164438331-1873359125.png)
+![image](https://user-images.githubusercontent.com/34237564/187342327-e1a4b4da-24a2-432a-af11-870fe75518b8.png)
 
 具体：
 1）服务器监听到请求，调用一个线程，把请求信息（字典类型的 environ 变量）处理后压入栈，线程再从栈内提取请求信息进行响应。使用线程的 id 作为获取栈内对应变量集的钥匙。
