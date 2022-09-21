@@ -482,6 +482,9 @@ print(time.strftime('%X'), "end")
 #### 6.3 redis 缓存容灾与令牌桶技术
 如果 redis 整个缓存级别都不可用，又要保证提供服务，不能进行服务降级，一个很好的解决办法就是使用令牌桶进行限流。
 备注：redis 的主要功能做备用方案，不可用的时候切备用方案。未实现的功能直接降级或限流走服务器（数据库），部分缓存功能可以利用本地缓存牺牲部分一致性来满足可用性。
+
+#### 6.4 模型过大的时候做过的探索
+> 查看我的 B 站：https://www.bilibili.com/video/BV1Gy4y1L7Tg/?spm_id_from=333.999.0.0 
  
 ### 本项目的 PPT 介绍
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/34237564/187341939-99e2333a-73b9-4798-a6ab-01cd61d88cab.png">
